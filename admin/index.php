@@ -1,5 +1,5 @@
 <?php require "funcadmin.php";
-	  //ceklogin();
+	  // ceklogin();
 
 	//require "../cklg.php";
 session_name('h2laundry');
