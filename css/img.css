@@ -1,0 +1,18 @@
+.bkg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 50%;
+  bottom: 0;
+}
+.logo{
+	position:center;
+	height : 100px;
+	width :60px:
+}
+
+.bkg2{
+background: no-repeat scroll;
+background-size: 100% 100%;
+min-height: 700px;
+}
