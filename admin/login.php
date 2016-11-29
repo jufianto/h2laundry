@@ -11,7 +11,7 @@ if(isset($_POST['login'])){
   $stmt->execute();
   $obj = $stmt->fetch();
   if ($obj) {
-  $_SESSION['username'] = $obj->username;
+  $_SESSION['username'] = $obj->nama_admin;
   header('Location:index.php');
 } else {
   header('Location:login.php');
@@ -19,7 +19,22 @@ if(isset($_POST['login'])){
 }
  ?>
 
-<?php include '../header.php';?>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>H2 Laundry</title>
+    <meta name="generator" content="Bootply" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href="../css/styles.css" rel="stylesheet">
+    <link href="../css/img.css" rel="stylesheet">
+  </head>
+  <body>
 <style type="text/css">
 body{
 background: url('img/background1.jpg') no-repeat scroll;
@@ -29,11 +44,11 @@ min-height: 700px;
 </style>
 <!--login modal-->
 <div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog"><br/><br/><br/>
+  <div class="modal-dialog"><br/>
   <div class="modal-content">
       <div class="modal-header">
 				<center><h2>Login Admin</h2></center>
-          <div class="logo " align="center"><img src="../img/logo-small.png"></div>
+          <div class="logo " align="center"><img src="../img/Logo.png" width="150" height="150"></div>
       </div>
       <div class="modal-body">
           <form class="form col-md-12 center-block" action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
@@ -57,4 +72,9 @@ min-height: 700px;
   </div>
 </div>
 	<!-- script references -->
-	<?php include "../footer.php"; ?>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+</body>
+
+</html>
+
