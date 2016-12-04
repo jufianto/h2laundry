@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">
-                    Forms
+                    Tambah pelanggan
                 </h1>
                 <ol class="breadcrumb">
                     <li>
@@ -28,25 +28,25 @@
         <div class="row">
             <div class="col-md-6">
 
-                <form role="form">
+                <form role="form" action="proAdmin.php?action=add" method="post">
 
                     <div class="form-group">
                         <label>Nama</label>
 
-                        <span><input class="form-control" placeholder="Nama"></span>
+                        <span><input class="form-control" placeholder="Nama" name="nama_admin"></span>
                     </div>
       <div class="form-group">
                         <label>Password</label>
 
-                        <input class="form-control" placeholder="Password" input type="password">
+                        <input class="form-control" placeholder="Password" input type="password" name="password">
                     </div>
                     <div class="form-group">
                         <label>Alamat</label>
-                        <input class="form-control" placeholder="Alamat">
+                        <input class="form-control" placeholder="Alamat" name="alamat">
                     </div>
       <div class="form-group">
                         <label>Nomor Hp</label>
-                        <input class="form-control" placeholder="Nomor Hp">
+                        <input class="form-control" placeholder="Nomor Hp" name="no_hp">
                     </div>
       </br>
       </br>

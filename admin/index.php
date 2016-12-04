@@ -1,4 +1,9 @@
 <?php include "../template/header.php"; ?>
+<?php
+require_once "funcadmin.php";
+ceklogin();
+
+?>
     <div >
 
         <!-- Menu -->
