@@ -10,11 +10,14 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
   switch ($_GET['action']){
    case "add":
    //inisiasi variabel sesuai data yang dikirim
-     $nama_admin = $_REQUEST['nama'];
-     $no_hp      = $_REQUEST['no_hp'];
+     $nama       = $_REQUEST['nama'];
+     $username   = $_REQUEST['username'];
      $password   = $_REQUEST['password'];
+     $alamat     = $_REQUEST['alamat'];
+     $no_hp      = $_REQUEST['no_hp '];
+     $status     = 0;
      // query untuk menambahkan
-     $sql  = "insert into admin (nama_admin,no_hp_admin,password) values ('$nama_admin','$no_hp','$alamat','$password')"
+     $sql  = "insert into pelanggan (username,pass_pelgn,nama_pelgn,no_hp_pelgn,alamat_plgn,status) values ('$username','$password','$nama','$no_hp','$alamat','$status')";
      //execute query
      $que = $conn->prepare($sql);
      if(($que->execute()))

@@ -33,7 +33,12 @@
                     <div class="form-group">
                         <label>Nama</label>
 
-                        <span><input class="form-control" placeholder="Nama" name="nama_admin"></span>
+                        <span><input class="form-control" placeholder="Nama" name="nama"></span>
+                    </div>
+                    <div class="form-group">
+                        <label>Username</label>
+
+                        <span><input class="form-control" placeholder="Nama" name="username"></span>
                     </div>
       <div class="form-group">
                         <label>Password</label>
