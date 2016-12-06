@@ -9,4 +9,12 @@ function ceklogin()
 }
 }
 
+function getData($sql)
+{
+    $stmt = $conn->prepare($sql);
+    $stmt->excecute;
+    print_r($stmt);
+}
+
+
 ?>

@@ -1,3 +1,9 @@
+<style>
+.navgo{
+  margin-right: 30px;
+}
+</style>
+
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -15,9 +21,9 @@
 
         <ul class="nav navbar-nav ">
             <li class="active">
-                <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                <a href="index.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
             </li>
-            <li>
+            <!-- <li>
                 <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
             </li>
             <li>
@@ -25,14 +31,15 @@
             </li>
             <li>
                 <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
-            </li>
+            </li> -->
             <li>
                 <a href="pelanggan.php"><i class="fa fa-fw fa-user"></i> Pelanggan</a>
             </li>
+
         </ul>
 
     <!-- /.navbar-collapse -->
-        <li class="dropdown">
+        <!-- <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
             <ul class="dropdown-menu message-dropdown">
                 <li class="message-preview">
@@ -111,22 +118,17 @@
                     <a href="#">View All</a>
                 </li>
             </ul>
-        </li>
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Nama <b class="caret"></b></a>
+        </li> -->
+        <li class="dropdown navgo">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $_SESSION['username']; ?> <b class="caret"></b></a>
             <ul class="dropdown-menu">
                 <li>
                     <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
                 </li>
-                <li>
-                    <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
-                </li>
+
                 <li class="divider"></li>
                 <li>
-                    <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                    <a href="../logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                 </li>
             </ul>
         </li>
