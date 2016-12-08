@@ -14,7 +14,7 @@ require_once '../config.php';
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">
-                    Tambah pelanggan
+                    Tambah Barang
                 </h1>
                 <ol class="breadcrumb">
                     <li>
