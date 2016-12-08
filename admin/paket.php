@@ -34,7 +34,7 @@ $stmt = $que->fetchAll();
   <div class="row">
       <div class="col-md-12">
           <h1 class="page-header">
-              paket
+              Paket
           </h1>
           <ol class="breadcrumb">
               <li class="active">

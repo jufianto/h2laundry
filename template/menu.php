@@ -38,6 +38,9 @@
             <li>
                 <a href="barang.php"><i class="fa fa-fw fa-file"></i> Barang</a>
             </li>
+            <li>
+                <a href="paket.php"><i class="fa fa-fw fa-truck"></i> Paket</a>
+            </li>
 
         </ul>
 
