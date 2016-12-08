@@ -35,6 +35,9 @@
             <li>
                 <a href="pelanggan.php"><i class="fa fa-fw fa-user"></i> Pelanggan</a>
             </li>
+            <li>
+                <a href="barang.php"><i class="fa fa-fw fa-file"></i> Barang</a>
+            </li>
 
         </ul>
 

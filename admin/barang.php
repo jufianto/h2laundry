@@ -10,10 +10,10 @@ include "../template/menu.php";
  <?php
 $cari = isset($_REQUEST['cari']) ? $_REQUEST['cari'] : '';
 if ($cari == ""){
-  $sql = " select * from pelanggan";
+  $sql = " select * from barang";
 }else {
   # code...
-  $sql = "select * from pelanggan where nama like '%$cari%'";
+  $sql = "select * from barang where nama like '%$cari%'";
 }
 
 $que = $conn->prepare($sql);
@@ -34,21 +34,21 @@ $stmt = $que->fetchAll();
   <div class="row">
       <div class="col-md-12">
           <h1 class="page-header">
-              Pelanggan
+              Barang
           </h1>
           <ol class="breadcrumb">
               <li class="active">
                   <i class="fa fa-dashboard"></i>  <a href="index.php">Dashboard</a>
               </li>
               <li class="active">
-                  <i class="fa fa-table"></i> Data Pelanggan
+                  <i class="fa fa-table"></i> Data Barang
               </li>
           </ol>
       </div>
   </div>
 
 
-  <!-- tabel pelanggan -->
+  <!-- tabel barang -->
   <div class="row">
       <div class="col-lg-12">
 
@@ -81,8 +81,8 @@ $stmt = $que->fetchAll();
 
 
 
-        <a href="tambahpelanggan.php" class="btn btn-default btn-md " style="margin-bottom:7px">
-        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Tambah Pelanggan
+        <a href="tambahBarang.php" class="btn btn-default btn-md " style="margin-bottom:7px">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Tambah Barang
         </a>
           <div class="table-responsive">
               <table class="table table-bordered table-hover">
@@ -90,11 +90,11 @@ $stmt = $que->fetchAll();
 
                       <tr>
                           <th width="50">No</th>
-                          <th>Nama</th>
-                          <th>Alamat</th>
-                          <th>No Hp</th>
-                          <th width="100">Status</th>
-                          <th width="200">Aksi</th>
+                          <th>Nama Barang</th>
+                          <th>Merek Barang</th>
+                          <th>Stok</th>
+                          <th>Harga</th>
+                          <th width="150">Aksi</th>
                       </tr>
                   </thead>
                   <tbody>
@@ -106,18 +106,13 @@ $stmt = $que->fetchAll();
                         ?>
                       <tr>
                           <td><?= $no ?></td>
-                          <td><?= $q->nama_pelgn ?></td>
-                          <td><?= $q->almt_pelgn ?></td>
-                          <td><?= $q->no_hp_pelgn ?></td>
-                          <td><?= $q->status == 1 ? 'Aktif' : 'Belum Aktif'; ?></td>
+                          <td><?= $q->nama_barang ?></td>
+                          <td><?= $q->merk_barang ?></td>
+                          <td><?= $q->stok ?></td>
+                          <td><?= $q->total_harga ?></td>
                           <td>
-                            <a href="editPelanggan.php?id_pelgn=<?= $q->id_pelgn ?>" > <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit </a>
-                            <a href="proPelanggan.php?action=del&id=<?= $q->id_pelgn?> " > <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Delete </a>
-                            <?php if($q->status == 0) { ?>
-                            <a href="proPelanggan.php?aktif=1&id=<?= $q->id_pelgn?> " > <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Aktifkan </a>
-                        <?php }else{ ?>
-                          <a href="proPelanggan.php?aktif=0&id=<?= $q->id_pelgn?> " > <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Blokir </a>
-                      <?php  } ?>
+                            <a href="editBarang.php?id_barang=<?= $q->id_barang ?>" > <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit </a>
+                            <a href="proBarang.php?action=del&id=<?= $q->id_barang?> " > <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Delete </a>
                           </td>
                       </tr>
                       <?php }?>
