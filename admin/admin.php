@@ -80,9 +80,7 @@ $stmt = $que->fetchAll();
 
 
 
-        <a href="tambahadmin.php" class="btn btn-default btn-md " style="margin-bottom:7px">
-        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Tambah Admin
-        </a>
+
           <div class="table-responsive">
               <table class="table table-bordered table-hover">
                   <thead>
@@ -107,7 +105,6 @@ $stmt = $que->fetchAll();
                           <td><?= $q->no_hp_admin ?></td>
                           <td>
                             <a href="editadmin.php?id_admin=<?= $q->id_admin ?>" > <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit </a>
-                            <a href="proadmin.php?action=del&id=<?= $q->id_admin?> " > <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Delete </a>
                           </td>
                       </tr>
                       <?php }?>

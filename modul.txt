@@ -1,0 +1,19 @@
+module =>
+
+admin
+
+dashboard
+laporan
+pelanggan   ok
+barang      ok
+paket       ok
+profile admin
+pemesanan
+
+pelanggan
+dashboard
+pelanggan
+pemesanan
+
+
+halaman utam web
