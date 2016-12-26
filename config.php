@@ -1,6 +1,6 @@
 <?php
 
-$dbname="h2laundry";
+$dbname="h2laundy";
 $dbuser="root";
 $dbpass="";
 $dbhost="localhost";
@@ -12,10 +12,5 @@ try{
 } catch (Exception $ex) {
     echo "Koneksi Error";
     echo $ex->getMessage();
-    
+
 }
-
-
-
-
- 

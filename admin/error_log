@@ -1,0 +1,18 @@
+[26-Dec-2016 14:34:18 Asia/Jakarta] PHP Notice:  Undefined index: username in /home/jufianto/public_html/h2laundry/template/menu.php on line 129
+[26-Dec-2016 14:34:24 Asia/Jakarta] PHP Notice:  Undefined variable: conn in /home/jufianto/public_html/h2laundry/admin/login.php on line 9
+[26-Dec-2016 14:34:24 Asia/Jakarta] PHP Fatal error:  Call to a member function prepare() on null in /home/jufianto/public_html/h2laundry/admin/login.php on line 9
+[26-Dec-2016 14:42:22 Asia/Jakarta] PHP Notice:  Undefined index: username in /home/jufianto/public_html/h2laundry/template/menu.php on line 129
+[26-Dec-2016 14:42:25 Asia/Jakarta] PHP Notice:  Undefined variable: conn in /home/jufianto/public_html/h2laundry/admin/login.php on line 9
+[26-Dec-2016 14:42:25 Asia/Jakarta] PHP Fatal error:  Call to a member function prepare() on null in /home/jufianto/public_html/h2laundry/admin/login.php on line 9
+[26-Dec-2016 14:43:20 Asia/Jakarta] PHP Notice:  Undefined variable: conn in /home/jufianto/public_html/h2laundry/admin/login.php on line 9
+[26-Dec-2016 14:43:20 Asia/Jakarta] PHP Fatal error:  Call to a member function prepare() on null in /home/jufianto/public_html/h2laundry/admin/login.php on line 9
+[26-Dec-2016 14:43:49 Asia/Jakarta] PHP Notice:  Undefined index: username in /home/jufianto/public_html/h2laundry/template/menu.php on line 129
+[26-Dec-2016 14:43:52 Asia/Jakarta] PHP Notice:  Undefined variable: conn in /home/jufianto/public_html/h2laundry/admin/login.php on line 9
+[26-Dec-2016 14:43:52 Asia/Jakarta] PHP Fatal error:  Call to a member function prepare() on null in /home/jufianto/public_html/h2laundry/admin/login.php on line 9
+[26-Dec-2016 14:44:19 Asia/Jakarta] PHP Notice:  Undefined index: username in /home/jufianto/public_html/h2laundry/template/menu.php on line 129
+[26-Dec-2016 14:44:24 Asia/Jakarta] PHP Notice:  Undefined variable: conn in /home/jufianto/public_html/h2laundry/admin/login.php on line 9
+[26-Dec-2016 14:44:24 Asia/Jakarta] PHP Fatal error:  Call to a member function prepare() on null in /home/jufianto/public_html/h2laundry/admin/login.php on line 9
+[26-Dec-2016 14:56:28 Asia/Jakarta] PHP Notice:  Undefined index: username in /home/jufianto/public_html/h2laundry/template/menu.php on line 129
+[26-Dec-2016 14:58:53 Asia/Jakarta] PHP Notice:  Undefined index: username in /home/jufianto/public_html/h2laundry/template/menu.php on line 129
+[26-Dec-2016 14:58:54 Asia/Jakarta] PHP Notice:  Undefined index: username in /home/jufianto/public_html/h2laundry/template/menu.php on line 129
+[26-Dec-2016 14:59:29 Asia/Jakarta] PHP Notice:  Undefined index: username in /home/jufianto/public_html/h2laundry/template/menu.php on line 129
