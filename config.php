@@ -1,6 +1,6 @@
 <?php
 
-$dbname="h2laundy";
+$dbname="h2laundry";
 $dbuser="root";
 $dbpass="";
 $dbhost="localhost";
