@@ -9,12 +9,24 @@ function ceklogin()
 }
 }
 
-function getData($sql)
+function getData($sql,$conn)
 {
     $stmt = $conn->prepare($sql);
-    $stmt->excecute;
-    print_r($stmt);
+    $stmt->execute();
+		$stmt->setFetchMode(PDO::FETCH_OBJ);
+		$stmt = $stmt->fetchAll();
+    return $stmt;
 }
+
+function getOne($sql,$conn){
+	$que = $conn->prepare($sql);
+	$que->execute();
+	$que->setFetchMode(PDO::FETCH_OBJ);
+	$stmt = $que->fetch();
+	return $stmt;
+}
+
+
 
 
 ?>

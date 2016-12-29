@@ -94,7 +94,7 @@ $stmt = $que->fetchAll();
                           <th>Alamat</th>
                           <th>No Hp</th>
                           <th width="100">Status</th>
-                          <th width="200">Aksi</th>
+                          <th width="200" colspan="2">Aksi</th>
                       </tr>
                   </thead>
                   <tbody>
@@ -110,7 +110,7 @@ $stmt = $que->fetchAll();
                           <td><?= $q->almt_pelgn ?></td>
                           <td><?= $q->no_hp_pelgn ?></td>
                           <td><?= $q->status == 1 ? 'Aktif' : 'Belum Aktif'; ?></td>
-                          <td>
+                          <td width="200">
                             <a href="editPelanggan.php?id_pelgn=<?= $q->id_pelgn ?>" > <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit </a>
                             <a href="proPelanggan.php?action=del&id=<?= $q->id_pelgn?> " > <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Delete </a>
                             <?php if($q->status == 0) { ?>
@@ -118,6 +118,9 @@ $stmt = $que->fetchAll();
                         <?php }else{ ?>
                           <a href="proPelanggan.php?aktif=0&id=<?= $q->id_pelgn?> " > <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Blokir </a>
                       <?php  } ?>
+                          </td>
+                          <td width="75">
+                            <a href="tambahPemesanan.php?id=<?= $q->id_pelgn?>" class="btn btn-info btn-sm">Pesan</a>
                           </td>
                       </tr>
                       <?php }?>

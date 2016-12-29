@@ -7,12 +7,20 @@ require_once '../config.php';
 <?php include "../template/header.php"; ?>
 <?php include "../template/menu.php"; ?>
 <?php
-$id_pelgn = $_GET['id_pelgn'];
+$id_pelgn = $_GET['id'];
 $sql = " select * from pelanggan where id_pelgn= '$id_pelgn' ";
-$que = $conn->prepare($sql);
-$que->execute();
-$que->setFetchMode(PDO::FETCH_OBJ);
-$stmt = $que->fetch();
+$stmt = getOne($sql,$conn);
+
+$sql1 = " select * from paket ";
+$stmt1 = getData($sql1,$conn);
+
+// $que1 = $conn->prepare($sql1);
+// $que1->execute();
+// $que1->setFetchMode(PDO::FETCH_OBJ);
+// $stmt1 = $que1->fetchAll();
+
+// print_r($stmt1);exit();
+
  ?>
 <div id="page-wrapper">
     <div class="container-fluid">
@@ -45,16 +53,42 @@ $stmt = $que->fetch();
 
                     <div class="form-group">
                         <label>Nama Pelanggan</label>
-                        <span><input class="form-control" placeholder="" value="<?= $stmt->nama_pelgn ?>" readonly="true"></span>
+                        <span><input class="form-control" name="nama_pelgn" placeholder="" value="<?= $stmt->nama_pelgn ?>" readonly="true"></span>
                         <input class="form-control" placeholder="" type="hidden" value="<?= $stmt->id_pelgn ?>"  name="id_pelgn">
                     </div>
                     <div class="form-group">
-                        <label>Harga Paket</label>
+                        <label>Paket</label>
+                        <?php $harga ?>
 
-                        <span><input class="form-control" placeholder="" name="harga_paket"></span>
+                        <select class="form-control" name="paket">
+                        <?php foreach($stmt1 as $key){ ?>
+                          <option value="<?= $key->id_paket ?>"> <?php echo $key->paket .'        -->       ' .$key->harga ;?> </option>
+
+                          <?php } ?>
+                      </select>
                     </div>
 
-      </br>
+                    <div class="form-group">
+                        <label>Bayar di Muka ? </label><br>
+                        <label class="radio-inline">
+                          <input type="radio" name="status_bayar" id="inlineRadio1" value="1"> Iya
+                        </label>
+                        <label class="radio-inline">
+                          <input type="radio" name="status_bayar" id="inlineRadio2" value="0"> Tidak
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Berat</label>
+                        <span><input class="form-control" name="berat" placeholder="Berat Cucian"></span>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Total Harga</label>
+                        <span><input class="form-control" name="total_harga"></span>
+                    </div>
+
       </br>
 
                     <div class="form-group">
