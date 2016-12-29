@@ -7,7 +7,7 @@ laporan
 pelanggan   ok
 barang      ok
 paket       ok
-profile admin
+profile admin ok
 pemesanan
 
 pelanggan
@@ -17,3 +17,4 @@ pemesanan
 
 
 halaman utam web
+blokir tidak bisa pesan 

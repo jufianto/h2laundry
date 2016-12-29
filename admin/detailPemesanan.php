@@ -10,16 +10,13 @@ include "../template/menu.php";
  <?php
 $cari = isset($_REQUEST['cari']) ? $_REQUEST['cari'] : '';
 if ($cari == ""){
-  $sql = " SELECT paket.paket,pelanggan.nama_pelgn,pemesanan.status_cucian,pemesanan.status_bayar,pemesanan.tgl_pemesanan,pemesanan.berat,pemesanan.total_harga,pemesanan.id_pemesanan FROM pemesanan INNER JOIN pelanggan on pemesanan.id_pelgn = pelanggan.id_pelgn INNER JOIN paket on pemesanan.id_paket = paket.id_paket";
+  $sql = " SELECT paket.paket,paket.harga,pelanggan.nama_pelgn,pemesanan.status_cucian,pemesanan.status_bayar,pemesanan.tgl_pemesanan,pemesanan.berat,pemesanan.total_harga,pemesanan.id_pemesanan FROM pemesanan INNER JOIN pelanggan on pemesanan.id_pelgn = pelanggan.id_pelgn INNER JOIN paket on pemesanan.id_paket = paket.id_paket";
 }else {
   # code...
   $sql = "select * from pemesanan where nama like '%$cari%'";
 }
 
-$que = $conn->prepare($sql);
-$que->execute();
-$que->setFetchMode(PDO::FETCH_OBJ);
-$stmt = $que->fetchAll();
+$q = getOne($sql,$conn);
 
   ?>
  <style type="text/css">
@@ -41,7 +38,10 @@ $stmt = $que->fetchAll();
                   <i class="fa fa-dashboard"></i>  <a href="index.php">Dashboard</a>
               </li>
               <li class="active">
-                  <i class="fa fa-table"></i> Data Pemesanan
+                  <i class="fa fa-table"></i> <a href="pemesanan.php">Data Pemesanan</a>
+              </li>
+              <li class="active">
+                  <i class="fa fa-table "></i> Detail Pemesanan
               </li>
           </ol>
       </div>
@@ -85,42 +85,43 @@ $stmt = $que->fetchAll();
         <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Tambah Pemesanan
         </a> -->
           <div class="table-responsive">
-              <table class="table table-bordered table-hover">
-                  <thead>
+              <table class="table  table-hover">
 
                       <tr>
-                          <th width="50">No</th>
-                          <th>Nama Pelanggan</th>
-                          <th>Status Cucian</th>
-                          <th>Status Bayar</th>
-                          <th>Date</th>
-                          <th>Total Harga</th>
-                          <th width="200">Aksi</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                    <?php
-                    $no = 0;
-                    foreach ($stmt as $q)
-                    {
-                        $no++;
-                        ?>
-                      <tr>
-                          <td><?= $no ?></td>
+                          <td width="300">Nama Pelanggan</td>
                           <td><?= $q->nama_pelgn ?></td>
-                          <td><?= sCuci($q->status_cucian) ?></td>
-                          <td><?= sBayar($q->status_bayar) ?></td>
-                          <td><?= $q->tgl_pemesanan ?></td>
-                          <td><?= $q->total_harga ?></td>
-                          <td>
-                            <a href="editPemesanan.php?id_pemesanan=<?= $q->id_pemesanan ?>" > <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit </a>
-                            <a href="proPemesanan.php?action=del&id=<?= $q->id_pemesanan?> " > <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Delete </a>
-                            <a href="detailPemesanan.php?id=<?= $q->id_pemesanan?> " > <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span> Detail </a>
-                          </td>
                       </tr>
-                      <?php }?>
+                      <tr>
+                          <td width="300">Paket</td>
+                          <td><?= $q->paket ?></td>
+                      </tr>
+                      <tr>
+                          <td width="300">Harga Paket</td>
+                          <td><?= $q->harga ?></td>
+                      </tr>
+                      <tr>
+                          <td width="300">Status Cucian</td>
+                          <td><?= sCuci($q->status_cucian) ?></td>
+                      </tr>
+                      <tr>
+                          <td width="300">Status Bayar</td>
+                          <td><?= sBayar($q->status_bayar) ?></td>
+                      </tr>
+                      <tr>
+                          <td width="300">tanggal Pemesanan</td>
+                          <td><?= $q->tgl_pemesanan ?></td>
+                      </tr>
+                      <tr>
+                          <td width="300">Berat</td>
+                          <td><?= $q->berat ?></td>
+                      </tr>
+                      <tr>
+                          <td width="300">Total Harga</td>
+                          <td><?= $q->total_harga ?></td>
+                      </tr>
 
-                  </tbody>
+
+
               </table>
           </div>
       </div>

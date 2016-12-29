@@ -26,6 +26,22 @@ function getOne($sql,$conn){
 	return $stmt;
 }
 
+function sCuci($data){
+	if ($data == 0){
+		echo "Belum Selesai";
+	}else{
+		echo "Selesai";
+	}
+}
+
+function sBayar($data){
+	if($data == 0){
+		echo "Belum Lunas";
+	}else{
+		echo "Lunas";
+	}
+}
+
 
 
 

@@ -41,7 +41,9 @@
             <li>
                 <a href="paket.php"><i class="fa fa-fw fa-truck"></i> Paket</a>
             </li>
-
+            <li>
+                <a href="pemesanan.php"><i class="fa fa-fw fa-envelope"></i> Pemesanan</a>
+            </li>
         </ul>
 
     <!-- /.navbar-collapse -->

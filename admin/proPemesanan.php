@@ -30,4 +30,25 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
 }
 
 
+}else if($_SERVER['REQUEST_METHOD'] === 'GET')
+{
+      if(isset($_GET["action"]) && isset($_GET["id"]))
+         {
+             $sql="DELETE FROM pemesanan WHERE id_pemesanan='".$_GET['id']."'";
+             $que = $conn->prepare($sql);
+
+             if($que->execute())
+             {
+                 header("Location:pemesanan.php?act=del");
+
+             }
+             else
+             {
+                 echo "kesalahan query";
+             }
+         }
+
 }
+
+
+?>
