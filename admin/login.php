@@ -60,7 +60,7 @@ min-height: 700px;
 
 
 				<center><h2>Login Admin</h2></center>
-          <div class="logo " align="center"><img src="../img/Logo.png" width="150" height="150"></div>
+          <div class="logo " align="center"><img src="../img/logoxx.png" width="150" height="150"></div>
       </div>
       <div class="modal-body">
           <form class="form col-md-12 center-block" action="<?php $_SERVER['PHP_SELF'] ?>" method="post">

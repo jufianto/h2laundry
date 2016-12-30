@@ -90,7 +90,7 @@ ceklogin();
                                     </div>
                                     <div class="col-xs-9 text-right">
                                         <div class="huge">124</div>
-                                        <div>Total o</div>
+                                        <div>Total Orderan Selesai</div>
                                     </div>
                                 </div>
                             </div>
@@ -112,7 +112,7 @@ ceklogin();
                                     </div>
                                     <div class="col-xs-9 text-right">
                                         <div class="huge">13</div>
-                                        <div>Support Tickets!</div>
+                                        <div>Total Orderan Belum Selesai</div>
                                     </div>
                                 </div>
                             </div>
