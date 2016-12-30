@@ -120,7 +120,11 @@ $stmt = $que->fetchAll();
                       <?php  } ?>
                           </td>
                           <td width="75">
+                            <?php if($q->status == 1 ) { ?>
                             <a href="tambahPemesanan.php?id=<?= $q->id_pelgn?>" class="btn btn-info btn-sm">Pesan</a>
+                            <?php }else{
+                              echo "TERBLOKIR";
+                            } ?>
                           </td>
                       </tr>
                       <?php }?>

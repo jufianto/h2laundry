@@ -27,6 +27,23 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
      }
      break;
 
+     case "update":
+     $id_pemesanan = $_REQUEST['id_pemesanan'];
+     $paket =  $_REQUEST['paket'];
+     $berat =  $_REQUEST['berat'];
+     $total_harga= $_REQUEST['total_harga'];
+
+     $sql = "update pemesanan set id_paket = '$paket' , berat = '$berat', total_harga = '$total_harga' where id_pemesanan = '$id_pemesanan'";
+
+     $que = $conn->prepare($sql);
+     if(($que->execute()))
+        {
+           //echo "suskses";
+           header('location:pemesanan.php?act=update');
+        }else{
+           $que->errorInfo();
+       }
+
 }
 
 

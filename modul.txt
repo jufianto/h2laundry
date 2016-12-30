@@ -8,7 +8,7 @@ pelanggan   ok
 barang      ok
 paket       ok
 profile admin ok
-pemesanan ok but not edit
+pemesanan ok but not edit ok
 pengembalian ok
 
 pelanggan
@@ -20,7 +20,7 @@ login ok
 
 
 halaman utama web
-blokir tidak bisa pesan
+blokir tidak bisa pesan ok
 total harga otomatis
 info login gagal
 cari di setiap modul
