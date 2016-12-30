@@ -22,7 +22,8 @@ login ok
 halaman utama web
 blokir tidak bisa pesan ok
 total harga otomatis
-info login gagal
+info login gagal ok
 cari di setiap modul
+logo di login admin dan index beda
 
 DFD di edit , user enggak bisa ambil cucian

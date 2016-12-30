@@ -16,7 +16,7 @@ if(isset($_POST['login'])){
   header('Location:pelanggan/index.php');
 } else {
 
-  header('Location:login.php');
+  header('Location:login.php?failed');
 }
 }
  ?>
@@ -98,6 +98,16 @@ if(isset($_POST['login'])){
 				<div class="col-lg-4 col-sm-6">
 				</div>
 				<div class="col-lg-4 col-sm-6">
+
+          <?php if(isset($_GET['failed'])) { ?>
+          <div class="row">
+              <div class="col-lg-12">
+                  <div class="alert alert-info alert-dismissable">
+                      <i class="fa fa-info-circle"></i>  <strong>GAGAL</strong> Username atau Password Salah
+                  </div>
+              </div>
+          </div>
+          <?php } ?>
 
                 <form role="form" action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
 

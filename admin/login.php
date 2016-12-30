@@ -14,7 +14,7 @@ if(isset($_POST['login'])){
   $_SESSION['username'] = $obj->nama_admin;
   header('Location:index.php');
 } else {
-  header('Location:login.php');
+  header('Location:login.php?failed');
 }
 }
  ?>
@@ -47,6 +47,18 @@ min-height: 700px;
   <div class="modal-dialog"><br/>
   <div class="modal-content">
       <div class="modal-header">
+
+        <?php if(isset($_GET['failed'])) { ?>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="alert alert-info alert-dismissable">
+                    <i class="fa fa-info-circle"></i>  <strong>GAGAL</strong> Username atau Password Salah
+                </div>
+            </div>
+        </div>
+        <?php } ?>
+
+
 				<center><h2>Login Admin</h2></center>
           <div class="logo " align="center"><img src="../img/Logo.png" width="150" height="150"></div>
       </div>
