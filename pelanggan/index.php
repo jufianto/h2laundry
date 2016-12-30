@@ -13,8 +13,11 @@ $sql = "select * from pemesanan where id_pelgn = $id_pelgn ";
 $stmt = getData($sql, $conn);
 $stmt = count($stmt);
 
+$sql1 = "select * from pemesanan where id_pelgn = $id_pelgn and status = 1 ";
+$stmt1 = getData($sql1, $conn);
+$stok = count($stmt1);
 
-$sql2 = "select * from pemesanan where id_pelgn = $id_pelgn and status_cucian = 1 ";
+$sql2 = "select * from pemesanan where id_pelgn = $id_pelgn and status_cucian = 1 and status = 0";
 $stmt2 = getData($sql2,$conn);
 $stno = count($stmt2);
 
@@ -42,7 +45,7 @@ $stno = count($stmt2);
       </div>
   </div>
 
-
+<?php if($stno > 0) { ?>
   <div class="row">
       <div class="col-lg-12">
           <div class="alert alert-info alert-dismissable">
@@ -51,6 +54,7 @@ $stno = count($stmt2);
           </div>
       </div>
   </div>
+  <?php } ?>
 
   <div class="row">
       <div class="col-lg-12">
@@ -85,7 +89,7 @@ $stno = count($stmt2);
                             <i class="fa fa-comments fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge"><?= 5//$stok ?></div>
+                            <div class="huge"><?= $stok ?></div>
                             <div>Total Cucian Telah di Ambil</div>
                         </div>
                     </div>

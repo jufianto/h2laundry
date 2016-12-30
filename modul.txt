@@ -9,11 +9,11 @@ barang      ok
 paket       ok
 profile admin ok
 pemesanan ok but not edit
-pengembalian
+pengembalian ok
 
 pelanggan
 
-dashboard ok , tinggal dasboard pengembalian
+dashboard ok , tinggal dasboard pengembalian ok
 pelanggan daftar ok profile ok
 pemesanan ok
 login ok

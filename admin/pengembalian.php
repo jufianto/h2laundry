@@ -10,7 +10,7 @@ include "../template/menu.php";
  <?php
 $cari = isset($_REQUEST['cari']) ? $_REQUEST['cari'] : '';
 if ($cari == ""){
-  $sql = " SELECT paket.paket,pelanggan.nama_pelgn,pemesanan.status_cucian,pemesanan.status_bayar,pemesanan.tgl_pemesanan,pemesanan.berat,pemesanan.total_harga,pemesanan.id_pemesanan FROM pemesanan INNER JOIN pelanggan on pemesanan.id_pelgn = pelanggan.id_pelgn INNER JOIN paket on pemesanan.id_paket = paket.id_paket where pemesanan.status = 0";
+  $sql = " SELECT paket.paket,pelanggan.nama_pelgn,pemesanan.status_cucian,pemesanan.status_bayar,pemesanan.tgl_pemesanan,pemesanan.berat,pemesanan.total_harga,pemesanan.id_pemesanan FROM pemesanan INNER JOIN pelanggan on pemesanan.id_pelgn = pelanggan.id_pelgn INNER JOIN paket on pemesanan.id_paket = paket.id_paket where pemesanan.status = 1";
 }else {
   # code...
   $sql = "select * from pemesanan where nama like '%$cari%'";
@@ -35,14 +35,14 @@ $stmt = $que->fetchAll();
   <div class="row">
       <div class="col-md-12">
           <h1 class="page-header">
-              Pemesanan
+              Data Cucian Kembali
           </h1>
           <ol class="breadcrumb">
               <li class="active">
                   <i class="fa fa-dashboard"></i>  <a href="index.php">Dashboard</a>
               </li>
               <li class="active">
-                  <i class="fa fa-table"></i> Data Pemesanan
+                  <i class="fa fa-table"></i> Data Cucian Kembali
               </li>
           </ol>
       </div>
@@ -98,7 +98,7 @@ $stmt = $que->fetchAll();
                           <th>Status Bayar</th>
                           <th>Date</th>
                           <th>Total Harga</th>
-                          <th width="200" colspan="2">Aksi</th>
+                          <th width="200">Aksi</th>
                       </tr>
                   </thead>
                   <tbody>
@@ -116,22 +116,11 @@ $stmt = $que->fetchAll();
                           <td><?= $q->tgl_pemesanan ?></td>
                           <td><?= $q->total_harga ?></td>
                           <td width="180">
-                            <a href="editPemesanan.php?id_pemesanan=<?= $q->id_pemesanan ?>" > <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit </a>
-                            <a href="proPemesanan.php?action=del&id=<?= $q->id_pemesanan?> " > <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Delete </a>
+
                             <a href="detailPemesanan.php?id=<?= $q->id_pemesanan?> " > <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span> Detail </a>
                           </td>
 
-                          <td width="75">
-                            <?php
 
-                            if($q->status_cucian == 1) {
-                            ?>
-                            <a href="kembalikan.php?balik&id=<?= $q->id_pemesanan?>" class="btn btn-info btn-sm">Kembali</a>
-                            <?php }else{ ?>
-                            <a href="kembalikan.php?selesai&id=<?= $q->id_pemesanan?>" class="btn btn-info btn-sm">Selesai</a>
-
-                          <?php  } ?>
-                          </td>
 
                       </tr>
                       <?php }?>

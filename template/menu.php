@@ -44,6 +44,9 @@
             <li>
                 <a href="pemesanan.php"><i class="fa fa-fw fa-envelope"></i> Pemesanan</a>
             </li>
+            <li>
+                <a href="pengembalian.php"><i class="fa fa-fw fa-check"></i> Cucian Kembali</a>
+            </li>
         </ul>
 
     <!-- /.navbar-collapse -->
