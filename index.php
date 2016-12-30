@@ -58,10 +58,10 @@
                         <a class="page-scroll" href="#contact">About</a>
                     </li>
 					<li>
-                        <a class="page-scroll" href="Register.php">Register</a>
+                        <a class="page-scroll" href="register.php">Register</a>
                     </li>
 					<li>
-						<a class="page-scroll" href="#Login">Login</a>
+						<a class="page-scroll" href="login.php">Login</a>
 					</li>
                 </ul>
             </div>

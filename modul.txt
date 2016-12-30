@@ -8,13 +8,17 @@ pelanggan   ok
 barang      ok
 paket       ok
 profile admin ok
-pemesanan
+pemesanan ok but not edit
 
 pelanggan
+
 dashboard
-pelanggan
-pemesanan
+pelanggan 
+pemesanan ok
+login ok
 
 
-halaman utam web
-blokir tidak bisa pesan 
+halaman utama web
+blokir tidak bisa pesan
+total harga otomatis
+info login gagal
