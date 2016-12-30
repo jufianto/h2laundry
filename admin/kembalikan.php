@@ -7,8 +7,8 @@ $id = $_GET['id'];
 $sql = " SELECT * FROM pemesanan WHERE id_pemesanan = $id";
 $stmt=getOne($sql,$conn);
 
-if(isset($_GET['balik']) && $stmt->status_cucian == 1){
-$sqlbalik = "insert into pengembalian(id_pemesanan,id_pelgn) values ('$stmt->id_pemesanan','$stmt->id_pelgn')";
+if(isset($_GET['balik'])){
+$sqlbalik = "update pemesanan set status = 1 where id_pemesanan = $id";
 $que = $conn->prepare($sqlbalik);
 
 if($que->execute()){
