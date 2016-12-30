@@ -16,6 +16,7 @@ if ($cari == ""){
   $sql = "select * from pemesanan where nama like '%$cari%'";
 }
 
+
 $que = $conn->prepare($sql);
 $que->execute();
 $que->setFetchMode(PDO::FETCH_OBJ);
@@ -84,6 +85,8 @@ $stmt = $que->fetchAll();
         <!-- <a href="tambahPemesanan.php" class="btn btn-default btn-md " style="margin-bottom:7px">
         <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Tambah Pemesanan
         </a> -->
+
+
           <div class="table-responsive">
               <table class="table table-bordered table-hover">
                   <thead>
@@ -95,7 +98,7 @@ $stmt = $que->fetchAll();
                           <th>Status Bayar</th>
                           <th>Date</th>
                           <th>Total Harga</th>
-                          <th width="200">Aksi</th>
+                          <th width="200" colspan="2">Aksi</th>
                       </tr>
                   </thead>
                   <tbody>
@@ -112,11 +115,21 @@ $stmt = $que->fetchAll();
                           <td><?= sBayar($q->status_bayar) ?></td>
                           <td><?= $q->tgl_pemesanan ?></td>
                           <td><?= $q->total_harga ?></td>
-                          <td>
+                          <td width="180">
                             <a href="editPemesanan.php?id_pemesanan=<?= $q->id_pemesanan ?>" > <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit </a>
                             <a href="proPemesanan.php?action=del&id=<?= $q->id_pemesanan?> " > <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Delete </a>
                             <a href="detailPemesanan.php?id=<?= $q->id_pemesanan?> " > <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span> Detail </a>
                           </td>
+
+                          <td width="75">
+                            <?php
+
+                            if($q->status_cucian == 1) {
+                            ?>
+                            <a href="kembalikan.php?balik&id=<?= $q->id_pemesanan?>" class="btn btn-info btn-sm">Kembali</a>
+                            <?php } ?>
+                          </td>
+
                       </tr>
                       <?php }?>
 
