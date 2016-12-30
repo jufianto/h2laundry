@@ -38,7 +38,18 @@
 
 </head>
 
+
+
+
 <body id="page-top">
+
+<?php  if(isset($_GET['regis'])){
+   if($_GET['regis'] == 'add'){
+     ?>
+
+  <?php } } ?>
+
+
 
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">

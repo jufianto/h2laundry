@@ -1,3 +1,28 @@
+<?php
+require_once 'config.php';
+if(isset($_POST['login'])){
+
+$nama       = $_REQUEST['nama'];
+$username   = $_REQUEST['username'];
+$password   = md5($_REQUEST['password']);
+$alamat     = $_REQUEST['alamat'];
+$no_hp      = $_REQUEST['no_hp'];
+$status     = 0;
+// query untuk menambahkan
+$sql  = "insert into pelanggan (username,pass_pelgn,nama_pelgn,no_hp_pelgn,almt_pelgn,status) values ('$username','$password','$nama','$no_hp','$alamat','$status')";
+//execute query
+$que = $conn->prepare($sql);
+if(($que->execute()))
+   {
+      //echo "suskses";
+    //  header('location:index.php?regis=add');
+    $redirectUrl = 'index.php';
+     echo '<script type="application/javascript">alert("Telah Terdaftar, Silahkan Verifikasi Melalui Admin"); window.location.href = "'.$redirectUrl.'";</script>';
+   }else{
+      $que->errorInfo();
+  }
+}
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -75,7 +100,7 @@
 				</div>
 				<div class="col-lg-4 col-sm-6">
 
-                <form role="form" action="proAdmin.php?action=add" method="post">
+                <form role="form" action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
 
                     <div class="form-group">
                         <label>Nama</label>
@@ -104,7 +129,8 @@
 					</br>
 
                     <div class="form-group">
-                        <Button class="btn btn-primary btn-xl page-scroll">Simpan</button>
+                        <button class="btn btn-primary btn-xl page-scroll" type="submit" name="login">Simpan</button>
+
 
                     </div>
                 </form>

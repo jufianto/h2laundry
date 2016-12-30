@@ -13,7 +13,7 @@ pemesanan ok but not edit
 pelanggan
 
 dashboard
-pelanggan 
+pelanggan daftar ok profile
 pemesanan ok
 login ok
 

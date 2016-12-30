@@ -59,7 +59,7 @@ $(document).ready(function(){
                     <div class="form-group">
                         <label>Username</label>
 
-                        <span><input class="form-control" placeholder="Nama" name="username" value="<?= $stmt->username ?>"></span>
+                        <span><input class="form-control" placeholder="Username" name="username" value="<?= $stmt->username ?>"></span>
                     </div>
                     <div class="form-group">
                         <label>Password</label>
