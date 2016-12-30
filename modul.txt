@@ -9,11 +9,12 @@ barang      ok
 paket       ok
 profile admin ok
 pemesanan ok but not edit
+pengembalian
 
 pelanggan
 
-dashboard
-pelanggan daftar ok profile
+dashboard ok , tinggal dasboard pengembalian
+pelanggan daftar ok profile ok
 pemesanan ok
 login ok
 
@@ -22,3 +23,6 @@ halaman utama web
 blokir tidak bisa pesan
 total harga otomatis
 info login gagal
+cari di setiap modul
+
+DFD di edit , user enggak bisa ambil cucian

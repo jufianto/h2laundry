@@ -9,14 +9,16 @@ include "../template/menupl.php";
 
  <?php
 $id_pelgn = $_SESSION['id_pelgn'];
-$cari = isset($_REQUEST['cari']) ? $_REQUEST['cari'] : '';
-if ($cari == ""){
+$sq = isset($_REQUEST['s']) ? $_REQUEST['s'] : '';
+if ($sq == 'ok'){
+  $sql = "";
+}elseif ($sq == 'no') {
+  $sql = " SELECT paket.paket,pelanggan.nama_pelgn,pemesanan.status_cucian,pemesanan.status_bayar,pemesanan.tgl_pemesanan,pemesanan.berat,pemesanan.total_harga,pemesanan.id_pemesanan FROM pemesanan INNER JOIN pelanggan on pemesanan.id_pelgn = pelanggan.id_pelgn INNER JOIN paket on pemesanan.id_paket = paket.id_paket where pemesanan.id_pelgn = $id_pelgn and status_cucian = 1";
+}else if($sq == ''){
   $sql = " SELECT paket.paket,pelanggan.nama_pelgn,pemesanan.status_cucian,pemesanan.status_bayar,pemesanan.tgl_pemesanan,pemesanan.berat,pemesanan.total_harga,pemesanan.id_pemesanan FROM pemesanan INNER JOIN pelanggan on pemesanan.id_pelgn = pelanggan.id_pelgn INNER JOIN paket on pemesanan.id_paket = paket.id_paket where pemesanan.id_pelgn = $id_pelgn";
-}else {
-  # code...
-  $sql = "select * from pemesanan where nama like '%$cari%'";
-}
 
+}
+// print_r($sql);echo $sql;exit();
 $que = $conn->prepare($sql);
 $que->execute();
 $que->setFetchMode(PDO::FETCH_OBJ);

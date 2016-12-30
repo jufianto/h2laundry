@@ -6,7 +6,21 @@ ceklogin();
 include "../template/header.php";
 include "../template/menupl.php";
  ?>
+<?php
 
+$id_pelgn= $_SESSION['id_pelgn'];
+$sql = "select * from pemesanan where id_pelgn = $id_pelgn ";
+$stmt = getData($sql, $conn);
+$stmt = count($stmt);
+
+
+$sql2 = "select * from pemesanan where id_pelgn = $id_pelgn and status_cucian = 1 ";
+$stmt2 = getData($sql2,$conn);
+$stno = count($stmt2);
+
+
+// print_r($stmt);echo count($stmt);exit();
+ ?>
 
  <style type="text/css">
 .container{
@@ -33,7 +47,7 @@ include "../template/menupl.php";
       <div class="col-lg-12">
           <div class="alert alert-info alert-dismissable">
               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-              <i class="fa fa-info-circle"></i>  <strong>2</strong> Orderan cucian anda telah <strong>Selesai</strong>
+              <i class="fa fa-info-circle"></i>  <strong><?= $stno ?></strong> Orderan cucian anda telah <strong>Selesai</strong>
           </div>
       </div>
   </div>
@@ -48,12 +62,12 @@ include "../template/menupl.php";
                             <i class="fa fa-comments fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge">26</div>
+                            <div class="huge"><?= $stmt ?></div>
                             <div>Total Order Cucian</div>
                         </div>
                     </div>
                 </div>
-                <a href="#">
+                <a href="pemesanan.php">
                     <div class="panel-footer">
                         <span class="pull-left">View Details</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -71,7 +85,7 @@ include "../template/menupl.php";
                             <i class="fa fa-comments fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge">26</div>
+                            <div class="huge"><?= 5//$stok ?></div>
                             <div>Total Cucian Telah di Ambil</div>
                         </div>
                     </div>
@@ -94,12 +108,12 @@ include "../template/menupl.php";
                             <i class="fa fa-comments fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge">26</div>
+                            <div class="huge"><?= $stno ?></div>
                             <div>Total Cucian Belum di Ambil</div>
                         </div>
                     </div>
                 </div>
-                <a href="#">
+                <a href="pemesanan.php?s=no">
                     <div class="panel-footer">
                         <span class="pull-left">View Details</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
