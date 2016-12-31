@@ -79,7 +79,7 @@ $stmt = $que->fetchAll();
 
         <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
           <div class="input-group stylish-input-group">
-            <input type="text" class="form-control" name="cari"  placeholder="Search" >
+            <input type="text" class="form-control" name="cari"  placeholder="Search" value="<?= $cari ?>" >
             <span class="input-group-addon">
                 <button type="submit" >
                     <span class="glyphicon glyphicon-search"></span>

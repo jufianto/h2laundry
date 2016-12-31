@@ -42,6 +42,13 @@ function sBayar($data){
 	}
 }
 
+function sAmbil($data){
+	if($data == 0){
+		echo "Belum Diambil";
+	}else{
+		echo "Telah Diambil";
+	}
+}
 
 
 

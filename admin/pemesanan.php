@@ -8,17 +8,48 @@ include "../template/menu.php";
  ?>
 
  <?php
-// $cari = isset($_REQUEST['cari']) ? $_REQUEST['cari'] : '';
+$cari = isset($_REQUEST['cari']) ? $_REQUEST['cari'] : '';
 $sq = isset($_REQUEST['s']) ? $_REQUEST['s'] : '';
+
 if ($sq == 'ok'){
-  $sql = " SELECT paket.paket,pelanggan.nama_pelgn,pemesanan.status_cucian,pemesanan.status_bayar,pemesanan.tgl_pemesanan,pemesanan.berat,pemesanan.total_harga,pemesanan.id_pemesanan FROM pemesanan INNER JOIN pelanggan on pemesanan.id_pelgn = pelanggan.id_pelgn INNER JOIN paket on pemesanan.id_paket = paket.id_paket where pemesanan.status = 0 and pemesanan.status_cucian = 1";
-}elseif ($sq == 'no') {
-  $sql = " SELECT paket.paket,pelanggan.nama_pelgn,pemesanan.status_cucian,pemesanan.status_bayar,pemesanan.tgl_pemesanan,pemesanan.berat,pemesanan.total_harga,pemesanan.id_pemesanan FROM pemesanan INNER JOIN pelanggan on pemesanan.id_pelgn = pelanggan.id_pelgn INNER JOIN paket on pemesanan.id_paket = paket.id_paket where pemesanan.status = 0 and pemesanan.status_cucian = 0";
+  if ($cari == ""){
+    $sql = " SELECT paket.paket,pelanggan.nama_pelgn,pemesanan.status_cucian,pemesanan.status_bayar,pemesanan.tgl_pemesanan,pemesanan.berat,pemesanan.total_harga,pemesanan.id_pemesanan FROM pemesanan INNER JOIN pelanggan on pemesanan.id_pelgn = pelanggan.id_pelgn INNER JOIN paket on pemesanan.id_paket = paket.id_paket where pemesanan.status = 0 and pemesanan.status_cucian = 1";
 
-}else if($sq == ''){
-  $sql = " SELECT paket.paket,pelanggan.nama_pelgn,pemesanan.status_cucian,pemesanan.status_bayar,pemesanan.tgl_pemesanan,pemesanan.berat,pemesanan.total_harga,pemesanan.id_pemesanan FROM pemesanan INNER JOIN pelanggan on pemesanan.id_pelgn = pelanggan.id_pelgn INNER JOIN paket on pemesanan.id_paket = paket.id_paket where pemesanan.status = 0";
+   }else{
+     $sql = " SELECT paket.paket,pelanggan.nama_pelgn,pemesanan.status_cucian,pemesanan.status_bayar,pemesanan.tgl_pemesanan,pemesanan.berat,pemesanan.total_harga,pemesanan.id_pemesanan FROM pemesanan INNER JOIN pelanggan on pemesanan.id_pelgn = pelanggan.id_pelgn INNER JOIN paket on pemesanan.id_paket = paket.id_paket where pemesanan.status = 0 and pemesanan.status_cucian = 1 and pelanggan.nama_pelgn like '%$cari%'";
 
+   }
+}elseif ($sq == 'no'){
+  if ($cari == ""){
+      $sql = " SELECT paket.paket,pelanggan.nama_pelgn,pemesanan.status_cucian,pemesanan.status_bayar,pemesanan.tgl_pemesanan,pemesanan.berat,pemesanan.total_harga,pemesanan.id_pemesanan FROM pemesanan INNER JOIN pelanggan on pemesanan.id_pelgn = pelanggan.id_pelgn INNER JOIN paket on pemesanan.id_paket = paket.id_paket where pemesanan.status = 0 and pemesanan.status_cucian = 0";
+
+  }else{
+      $sql = " SELECT paket.paket,pelanggan.nama_pelgn,pemesanan.status_cucian,pemesanan.status_bayar,pemesanan.tgl_pemesanan,pemesanan.berat,pemesanan.total_harga,pemesanan.id_pemesanan FROM pemesanan INNER JOIN pelanggan on pemesanan.id_pelgn = pelanggan.id_pelgn INNER JOIN paket on pemesanan.id_paket = paket.id_paket where pemesanan.status = 0 and pemesanan.status_cucian = 0 and pelanggan.nama_pelgn like '%$cari%'";
+
+
+  }
+}elseif ($sq == ''){
+  if ($cari == ""){
+      $sql = " SELECT paket.paket,pelanggan.nama_pelgn,pemesanan.status_cucian,pemesanan.status_bayar,pemesanan.tgl_pemesanan,pemesanan.berat,pemesanan.total_harga,pemesanan.id_pemesanan FROM pemesanan INNER JOIN pelanggan on pemesanan.id_pelgn = pelanggan.id_pelgn INNER JOIN paket on pemesanan.id_paket = paket.id_paket where pemesanan.status = 0";
+
+  }else{
+      $sql = " SELECT paket.paket,pelanggan.nama_pelgn,pemesanan.status_cucian,pemesanan.status_bayar,pemesanan.tgl_pemesanan,pemesanan.berat,pemesanan.total_harga,pemesanan.id_pemesanan FROM pemesanan INNER JOIN pelanggan on pemesanan.id_pelgn = pelanggan.id_pelgn INNER JOIN paket on pemesanan.id_paket = paket.id_paket where pemesanan.status = 0 and pelanggan.nama_pelgn like '%$cari%'";
+
+
+  }
 }
+
+
+
+// if ($sq == 'ok'){
+//   $sql = " SELECT paket.paket,pelanggan.nama_pelgn,pemesanan.status_cucian,pemesanan.status_bayar,pemesanan.tgl_pemesanan,pemesanan.berat,pemesanan.total_harga,pemesanan.id_pemesanan FROM pemesanan INNER JOIN pelanggan on pemesanan.id_pelgn = pelanggan.id_pelgn INNER JOIN paket on pemesanan.id_paket = paket.id_paket where pemesanan.status = 0 and pemesanan.status_cucian = 1";
+// }elseif ($sq == 'no') {
+//   $sql = " SELECT paket.paket,pelanggan.nama_pelgn,pemesanan.status_cucian,pemesanan.status_bayar,pemesanan.tgl_pemesanan,pemesanan.berat,pemesanan.total_harga,pemesanan.id_pemesanan FROM pemesanan INNER JOIN pelanggan on pemesanan.id_pelgn = pelanggan.id_pelgn INNER JOIN paket on pemesanan.id_paket = paket.id_paket where pemesanan.status = 0 and pemesanan.status_cucian = 0";
+//
+// }else if($sq == ''){
+//   $sql = " SELECT paket.paket,pelanggan.nama_pelgn,pemesanan.status_cucian,pemesanan.status_bayar,pemesanan.tgl_pemesanan,pemesanan.berat,pemesanan.total_harga,pemesanan.id_pemesanan FROM pemesanan INNER JOIN pelanggan on pemesanan.id_pelgn = pelanggan.id_pelgn INNER JOIN paket on pemesanan.id_paket = paket.id_paket where pemesanan.status = 0";
+//
+// }
 
 
 // if ($cari == ""){
@@ -60,6 +91,24 @@ $stmt = $que->fetchAll();
       </div>
   </div>
 
+  <div class="row">
+
+
+      <div class="col-md-3 col-md-offset-9">
+
+        <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
+          <div class="input-group stylish-input-group">
+            <input type="text" class="form-control" name="cari"  placeholder="Search" value="<?= $cari ?>">
+            <span class="input-group-addon">
+                <button type="submit" >
+                    <span class="glyphicon glyphicon-search"></span>
+                </button>
+            </span>
+          </div>
+        </form>
+      </div>
+      <br><br>
+  </div>
 
   <!-- tabel Pemesanan -->
   <div class="row">

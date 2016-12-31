@@ -13,7 +13,7 @@ if ($cari == ""){
   $sql = " select * from paket";
 }else {
   # code...
-  $sql = "select * from paket where nama like '%$cari%'";
+  $sql = "select * from paket where paket like '%$cari%'";
 }
 
 $que = $conn->prepare($sql);
@@ -48,6 +48,28 @@ $stmt = $que->fetchAll();
   </div>
 
 
+  <div class="row">
+
+      <div class="col-md-9">
+        <a href="tambahPaket.php" class="btn btn-default btn-md " style="margin-bottom:7px">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Tambah Paket
+        </a>
+      </div>
+      <div class="col-md-3">
+
+        <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
+          <div class="input-group stylish-input-group">
+            <input type="text" class="form-control" name="cari"  placeholder="Search" value="<?= $cari ?>">
+            <span class="input-group-addon">
+                <button type="submit" >
+                    <span class="glyphicon glyphicon-search"></span>
+                </button>
+            </span>
+          </div>
+        </form>
+      </div>
+  </div>
+
   <!-- tabel paket -->
   <div class="row">
       <div class="col-lg-12">
@@ -81,9 +103,7 @@ $stmt = $que->fetchAll();
 
 
 
-        <a href="tambahPaket.php" class="btn btn-default btn-md " style="margin-bottom:7px">
-        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Tambah Paket
-        </a>
+
           <div class="table-responsive">
               <table class="table table-bordered table-hover">
                   <thead>

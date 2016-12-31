@@ -13,7 +13,8 @@ if ($cari == ""){
   $sql = " SELECT paket.paket,pelanggan.nama_pelgn,pemesanan.status_cucian,pemesanan.status_bayar,pemesanan.tgl_pemesanan,pemesanan.berat,pemesanan.total_harga,pemesanan.id_pemesanan FROM pemesanan INNER JOIN pelanggan on pemesanan.id_pelgn = pelanggan.id_pelgn INNER JOIN paket on pemesanan.id_paket = paket.id_paket where pemesanan.status = 1";
 }else {
   # code...
-  $sql = "select * from pemesanan where nama like '%$cari%'";
+  $sql = " SELECT paket.paket,pelanggan.nama_pelgn,pemesanan.status_cucian,pemesanan.status_bayar,pemesanan.tgl_pemesanan,pemesanan.berat,pemesanan.total_harga,pemesanan.id_pemesanan FROM pemesanan INNER JOIN pelanggan on pemesanan.id_pelgn = pelanggan.id_pelgn INNER JOIN paket on pemesanan.id_paket = paket.id_paket where pemesanan.status = 1 and pelanggan.nama_pelgn like '%$cari%'";
+
 }
 
 
@@ -46,6 +47,25 @@ $stmt = $que->fetchAll();
               </li>
           </ol>
       </div>
+  </div>
+
+  <div class="row">
+
+
+      <div class="col-md-3 col-md-offset-9">
+
+        <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
+          <div class="input-group stylish-input-group">
+            <input type="text" class="form-control" name="cari"  placeholder="Search" value="<?= $cari ?>">
+            <span class="input-group-addon">
+                <button type="submit" >
+                    <span class="glyphicon glyphicon-search"></span>
+                </button>
+            </span>
+          </div>
+        </form>
+      </div>
+      <br><br>
   </div>
 
 
