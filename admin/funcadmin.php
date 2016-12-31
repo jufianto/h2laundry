@@ -42,6 +42,24 @@ function sBayar($data){
 	}
 }
 
+function get_all_get()
+{
+        $output = "?"; 
+        $firstRun = true;
+        foreach($_GET as $key=>$val) {
+        if($key != $parameter) {
+            if(!$firstRun) {
+                $output .= "&";
+            } else {
+                $firstRun = false;
+            }
+            $output .= $key."=".$val;
+         }
+    }
+
+    return $output;
+}
+
 
 
 

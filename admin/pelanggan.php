@@ -13,7 +13,7 @@ if ($cari == ""){
   $sql = " select * from pelanggan";
 }else {
   # code...
-  $sql = "select * from pelanggan where nama like '%$cari%'";
+  $sql = "select * from pelanggan where nama_pelgn like '%$cari%'";
 }
 
 $que = $conn->prepare($sql);
@@ -50,6 +50,27 @@ $stmt = $que->fetchAll();
 
   <!-- tabel pelanggan -->
   <div class="row">
+
+      <div class="col-md-9">
+        <a href="tambahpelanggan.php" class="btn btn-default btn-md " style="margin-bottom:7px">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Tambah Pelanggan
+        </a>
+      </div>
+      <div class="col-md-3">
+
+        <form action="<?php $_SERVER['PHP_SELF'] ?>" method="get">
+          <div class="input-group stylish-input-group">
+            <input type="text" class="form-control" name="cari"  placeholder="Search" >
+            <span class="input-group-addon">
+                <button type="submit" >
+                    <span class="glyphicon glyphicon-search"></span>
+                </button>
+            </span>
+          </div>
+        </form>
+      </div>
+  </div>
+  <div class="row">
       <div class="col-lg-12">
 
 <?php
@@ -81,9 +102,8 @@ $stmt = $que->fetchAll();
 
 
 
-        <a href="tambahpelanggan.php" class="btn btn-default btn-md " style="margin-bottom:7px">
-        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Tambah Pelanggan
-        </a>
+
+
           <div class="table-responsive">
               <table class="table table-bordered table-hover">
                   <thead>

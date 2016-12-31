@@ -9,11 +9,21 @@ include "../template/menu.php";
 
  <?php
  $sq = isset($_REQUEST['s']) ? $_REQUEST['s'] : '';
- if ($sq == 'ok'){
-   $sql = "select * from barang where stok > 0";
+ $cari = isset($_REQUEST['cari']) ? $_REQUEST['cari'] : '';
 
+ if ($sq == 'ok'){
+   if ($cari == ""){
+   $sql = "select * from barang where stok > 0";
+    }else{
+   $sql = "select * from barang where stok > 0 and nama_barang like '%$cari%'";
+    }
  }elseif ($sq == ''){
+   if ($cari == ""){
      $sql = " select * from barang";
+   }else{
+     $sql = " select * from barang where nama_barang like '%$cari%'";
+
+   }
  }
 
 
@@ -41,6 +51,7 @@ $stmt = $que->fetchAll();
 <div id="page-wrapper">
 <div class="container">
   <!-- Page Heading -->
+
   <div class="row">
       <div class="col-md-12">
           <h1 class="page-header">
@@ -57,7 +68,27 @@ $stmt = $que->fetchAll();
       </div>
   </div>
 
+  <div class="row">
 
+      <div class="col-md-9">
+        <a href="tambahBarang.php" class="btn btn-default btn-md " style="margin-bottom:7px">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Tambah Barang
+        </a>
+      </div>
+      <div class="col-md-3">
+
+        <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
+          <div class="input-group stylish-input-group">
+            <input type="text" class="form-control" name="cari"  placeholder="Search" >
+            <span class="input-group-addon">
+                <button type="submit" >
+                    <span class="glyphicon glyphicon-search"></span>
+                </button>
+            </span>
+          </div>
+        </form>
+      </div>
+  </div>
   <!-- tabel barang -->
   <div class="row">
       <div class="col-lg-12">
@@ -91,9 +122,7 @@ $stmt = $que->fetchAll();
 
 
 
-        <a href="tambahBarang.php" class="btn btn-default btn-md " style="margin-bottom:7px">
-        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Tambah Barang
-        </a>
+
           <div class="table-responsive">
               <table class="table table-bordered table-hover">
                   <thead>
