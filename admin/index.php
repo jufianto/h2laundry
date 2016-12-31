@@ -1,14 +1,47 @@
+
 <?php include "../template/header.php"; ?>
+
 <?php
 require_once "funcadmin.php";
+require_once "../config.php";
 ceklogin();
 
+?>
+
+<?php
+$sql = "select * from pelanggan";
+$stmt = getData($sql,$conn);
+$pelanggan = count($stmt);
+
+$sqlor = "select * from pemesanan where status = 0";
+$stmt1 = getData($sqlor,$conn);
+$order = count($stmt1);
+
+$sqlok = "select * from pemesanan where status_cucian = 1 and status = 0";
+$stmt2 = getData($sqlok,$conn);
+$cuciok = count($stmt2);
+
+$sqlno = "select * from pemesanan where status_cucian = 0 and status = 0";
+$stmt3 = getData($sqlno,$conn);
+$cucino = count($stmt3);
+
+$sqlyes = "select * from pemesanan where status = 1";
+$stmt4 = getData($sqlyes,$conn);
+$cuciyes = count($stmt4);
+
+$sqlbarang = "select * from barang where stok > 0";
+$stmt5 = getData($sqlbarang,$conn);
+$cucibarang = count($stmt5);
 ?>
     <div >
 
         <!-- Menu -->
 <?php include "../template/menu.php"; ?>
-
+<style type="text/css">
+.container-fluid{
+ min-height: 800px;
+}
+</style>
         <div id="page-wrapper">
 
             <div class="container-fluid">
@@ -27,17 +60,17 @@ ceklogin();
                     </div>
                 </div>
 
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-lg-12">
                         <div class="alert alert-info alert-dismissable">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                             <i class="fa fa-info-circle"></i>  <strong>Like SB Admin?</strong> Try out <a href="http://startbootstrap.com/template-overviews/sb-admin-2" class="alert-link">SB Admin 2</a> for additional features!
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <div class="row">
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-4 col-md-6">
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <div class="row">
@@ -45,12 +78,12 @@ ceklogin();
                                         <i class="fa fa-comments fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">26</div>
+                                        <div class="huge"><?= $pelanggan ?></div>
                                         <div>Total Pelanggan</div>
                                     </div>
                                 </div>
                             </div>
-                            <a href="#">
+                            <a href="pelanggan.php">
                                 <div class="panel-footer">
                                     <span class="pull-left">View Details</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -59,20 +92,21 @@ ceklogin();
                             </a>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6">
+
+                    <div class="col-lg-4 col-md-6">
                         <div class="panel panel-green">
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
-                                        <i class="fa fa-tasks fa-5x"></i>
+                                        <i class="fa fa-comments fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">12</div>
-                                        <div>Total Orderan</div>
+                                        <div class="huge"><?= $order ?></div>
+                                        <div>Total Order Cucian</div>
                                     </div>
                                 </div>
                             </div>
-                            <a href="#">
+                            <a href="pemesanan.php">
                                 <div class="panel-footer">
                                     <span class="pull-left">View Details</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -81,20 +115,21 @@ ceklogin();
                             </a>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6">
+
+                    <div class="col-lg-4 col-md-6">
                         <div class="panel panel-yellow">
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
-                                        <i class="fa fa-shopping-cart fa-5x"></i>
+                                        <i class="fa fa-comments fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">124</div>
-                                        <div>Total Orderan Selesai</div>
+                                        <div class="huge"><?= $cuciyes ?></div>
+                                        <div>Total Cucian Diambil</div>
                                     </div>
                                 </div>
                             </div>
-                            <a href="#">
+                            <a href="pengembalian.php">
                                 <div class="panel-footer">
                                     <span class="pull-left">View Details</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -103,32 +138,84 @@ ceklogin();
                             </a>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-red">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-support fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">13</div>
-                                        <div>Total Orderan Belum Selesai</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="#">
-                                <div class="panel-footer">
-                                    <span class="pull-left">View Details</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
+
                 </div>
                 <!-- /.row -->
 
-                <div class="row">
+                <!-- row -->
+              <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="panel panel-green">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-comments fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge"><?= $cuciok ?></div>
+                                    <div>Total Cucian Selesai</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="pemesanan.php?s=ok">
+                            <div class="panel-footer">
+                                <span class="pull-left">View Details</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="panel panel-red">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-comments fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge"><?= $cucino ?></div>
+                                    <div>Total Cucian Belum Selesai</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="pemesanan.php?s=no">
+                            <div class="panel-footer">
+                                <span class="pull-left">View Details</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-comments fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge"><?= $cucibarang ?></div>
+                                    <div>Total Aset Barang</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="barang.php?s=ok">
+                            <div class="panel-footer">
+                                <span class="pull-left">View Details</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+              </div>
+                <!-- end row -->
+
+                <!-- <div class="row">
                     <div class="col-lg-12">
                         <div class="panel panel-default">
                             <div class="panel-heading">
@@ -139,10 +226,10 @@ ceklogin();
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- /.row -->
 
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-lg-4">
                         <div class="panel panel-default">
                             <div class="panel-heading">
@@ -276,7 +363,7 @@ ceklogin();
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- /.row -->
 
             </div>

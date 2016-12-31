@@ -8,13 +8,23 @@ include "../template/menu.php";
  ?>
 
  <?php
-$cari = isset($_REQUEST['cari']) ? $_REQUEST['cari'] : '';
-if ($cari == ""){
-  $sql = " select * from barang";
-}else {
-  # code...
-  $sql = "select * from barang where nama like '%$cari%'";
-}
+ $sq = isset($_REQUEST['s']) ? $_REQUEST['s'] : '';
+ if ($sq == 'ok'){
+   $sql = "select * from barang where stok > 0";
+
+ }elseif ($sq == ''){
+     $sql = " select * from barang";
+ }
+
+
+
+// $cari = isset($_REQUEST['cari']) ? $_REQUEST['cari'] : '';
+// if ($cari == ""){
+//   $sql = " select * from barang";
+// }else {
+//   # code...
+//   $sql = "select * from barang where nama like '%$cari%'";
+// }
 
 $que = $conn->prepare($sql);
 $que->execute();
