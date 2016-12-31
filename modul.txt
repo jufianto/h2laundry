@@ -2,7 +2,7 @@ module =>
 
 admin
 
-dashboard
+dashboard ok
 laporan
 pelanggan   ok
 barang      ok
