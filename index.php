@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<link rel="icon" href="img/favicon1.png" type="image/x-icon"/>
 <head>
 
     <meta charset="utf-8">
@@ -86,8 +86,8 @@
             <div class="header-content-inner">
                 <h1 id="homeHeading">Laundry Made Easy</h1>
                 <hr>
-                <p>Jasa H2 laundry sudah melayani ratusan pelanggan dari seluruh Pekanbaru. Bergabunglah dan nikmatilah pengalaman eksklusif bersama H2 Laundry.</p>
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">Order Now</a>
+                <p><b  class="text-default" >Jasa H2 laundry sudah melayani ratusan pelanggan dari seluruh Pekanbaru. Bergabunglah dan nikmatilah pengalaman eksklusif bersama H2 Laundry.<b ></p>
+                <a href="register.php" class="btn btn-primary btn-xl page-scroll sr-button">Daftar Sekarang</a>
             </div>
         </div>
     </header>
@@ -101,7 +101,7 @@
                     <hr class="light">
                     <p class="text-faded">Free Collection and Delivery <img class="img-circle" width="25" height="25"   src="img/cek.jpg"> 7 Days a Week <img class="img-circle" width="25" height="25"   src="img/cek.jpg"></p>
 					 <p class="text-faded"> Prices from just 5K/Kg <img class="img-circle" width="25" height="25"   src="img/cek.jpg"> Quality Guaranteed <img class="img-circle" width="25" height="25"   src="img/cek.jpg"></p>
-                    <a href="#services" class="page-scroll btn btn-default btn-xl sr-button">Get Started	!</a>
+                    
                 </div>
             </div>
         </div>
@@ -220,22 +220,32 @@
     <aside class="bg-primary">
         <div class="container text-center">
             <div class="call-to-action">
-                <h2>Harga Laundry</h2>
+                <h2>Paket Laundry</h2>
 				<hr class="light">
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
+						<img src="img/1day.jpg">
+                        <h2>1 Hari Selesai</h2>
+                        <p>Fast Service</p>
                     </div>
                 </div>
 				<div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
                         <img src="img/cleanprice.jpg">
-                        <h2>2K per Baju</h2>
+                        <h2>1K per Baju</h2>
                         <p>Shirt Service</p>
                     </div>
                 </div>
 				<div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
                         <img src="img/kg.jpg">
+                        <h2>6K per Kilogram</h2>
+                        <p>Full Service</p>
+                    </div>
+                </div>
+				<div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <img src="img/setrika.jpg">
                         <h2>5K per Kilogram</h2>
                         <p>Laundry Service</p>
                     </div>
@@ -251,12 +261,12 @@
                     <h2 class="section-heading">Gratis Antar Jemput</h2>
                     <hr class="primary">
                     <p>H2 Laundry melayani GRATIS antar jemput! Sekarang semuanya menjadi serba praktis. Anda tidak perlu repot-repot mencuci, mengeringkan, dan menyetrika pakaian Anda sendiri. Anda juga tidak perlu keluar rumah untuk menggotong-gotong pakaian Anda. Anda cukup menghubungi kami, maka kami langsung datang ke rumah Anda untuk menjemput pakaian Anda.</p>
-					<a href="#about" class="btn btn-primary btn-xl page-scroll">Daftar Sekarang!</a>
+
 				</div>
 
                 <div class="col-lg-4 col-lg-offset-2 text-center">
                     <i class="fa fa-phone fa-3x sr-contact"></i>
-                    <p>123-456-6789</p>
+                    <p>+0852-5555-7777</p>
                 </div>
                 <div class="col-lg-4 text-center">
                     <i class="fa fa-envelope-o fa-3x sr-contact"></i>
@@ -271,12 +281,13 @@
                 <div class="col-lg-5 col-sm-6 text-center">
                     <img src="img/ft-logo.jpg" height="150" width="400">
 					<p>H2_laundry © 2016</p>
+					
                 </div>
 				<div class="col-lg-4 col-sm-6 ">
 					<p><b>LOCATION</b></p>
 					<b>Jl.Delima No.123</b>
 					<b>Pekanbaru,RIAU</b>
-					<p>+123 456</p>
+					<p>+0852-5555-7777</p>
 					<p><b>EMAIL</b></p>
 					<p>H2_laundry@gmail.com</p>
 					<p><b>We're on social networks</b></p>
@@ -299,19 +310,20 @@
         </div>
     </section>
 
-    <!-- jQuery -->
-    <script src="js/jquery.min.js"></script>
+   <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Plugin JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="js/scrollreveal.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
     <!-- Theme JavaScript -->
     <script src="js/creative.min.js"></script>
+
 
 </body>
 
