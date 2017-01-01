@@ -17,6 +17,7 @@ if(isset($_POST['login'])){
   header('Location:login.php?failed');
 }
 }
+
  ?>
 
 <!DOCTYPE html>

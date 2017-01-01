@@ -44,7 +44,7 @@ function sBayar($data){
 
 function get_all_get()
 {
-        $output = "?"; 
+        $output = "?";
         $firstRun = true;
         foreach($_GET as $key=>$val) {
         if($key != $parameter) {

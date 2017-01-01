@@ -1,0 +1,17 @@
+{
+  "uploadOnSave": false,
+  "useAtomicWrites": false,
+  "deleteLocal": false,
+  "hostname": "ftp.jufianto.com",
+  "port": "21",
+  "target": "/",
+  "ignore": [
+    ".git/**",
+    "config.php"
+  ],
+  "username": " h2laundry@jufianto.com",
+  "password": "c8RRhw=Sifp@",
+  "watch": [],
+  "readyTimeout": 99999,
+  "transport": "ftp"
+}

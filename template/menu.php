@@ -47,6 +47,9 @@
             <li>
                 <a href="pengembalian.php"><i class="fa fa-fw fa-check"></i> Cucian Kembali</a>
             </li>
+            <li>
+                <a href="laporan.php"><i class="fa fa-fw fa-area-chart"></i> Laporan</a>
+            </li>
         </ul>
 
     <!-- /.navbar-collapse -->
