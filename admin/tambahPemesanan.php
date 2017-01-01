@@ -93,7 +93,7 @@ $stmt1 = getData($sql1,$conn);
 
                     <div class="form-group">
                         <label>Total Harga</label>
-                        <span><input class="form-control" name="total_harga" id="total_harga" value=""></span>
+                        <span><input class="form-control" name="total_harga" id="total_harga" value="" readonly=""></span>
                     </div>
 
       </br>
@@ -118,12 +118,6 @@ $stmt1 = getData($sql1,$conn);
 
 $(document).ready(function(){
 
-  var vPaket = $( "#paket" ).val();
-  var strPaket = vPaket.split(";");
-  var paket = strPaket[0];
-  var harga = strPaket[1];
-  var berat = $( "#berat" ).val();
-  var total_harga = harga * berat;
 
      $('#berat').keyup(function () {
        var vPaket = $( "#paket" ).val();

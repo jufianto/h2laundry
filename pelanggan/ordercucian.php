@@ -58,9 +58,9 @@ $stmt1 = getData($sql1,$conn);
                         <label>Paket</label>
                         <?php $harga ?>
 
-                        <select class="form-control" name="paket">
+                        <select class="form-control" name="paket" id="paket">
                         <?php foreach($stmt1 as $key){ ?>
-                          <option value="<?= $key->id_paket ?>"> <?php echo $key->paket .'        -->       ' .$key->harga ;?> </option>
+                          <option value="<?= $key->id_paket .';'. $key->harga ?>"> <?php echo $key->paket .'        -->       ' .$key->harga ;?> </option>
 
                           <?php } ?>
                       </select>
@@ -78,13 +78,13 @@ $stmt1 = getData($sql1,$conn);
 
                     <div class="form-group">
                         <label>Berat</label>
-                        <span><input class="form-control" name="berat" placeholder="Berat Cucian"></span>
+                        <span><input class="form-control" name="berat" placeholder="Berat Cucian" id="berat"></span>
                     </div>
 
 
                     <div class="form-group">
                         <label>Total Harga</label>
-                        <span><input class="form-control" name="total_harga"></span>
+                        <span><input class="form-control" name="total_harga" id="total_harga" readonly=""></span>
                     </div>
 
       </br>
@@ -104,5 +104,36 @@ $stmt1 = getData($sql1,$conn);
     <!-- /.container-fluid -->
 
 </div>
+<script src="../js/jquery.js"></script>
+<script>
+
+$(document).ready(function(){
+
+
+     $('#berat').keyup(function () {
+       var vPaket = $( "#paket" ).val();
+       var strPaket = vPaket.split(";");
+       var paket = strPaket[0];
+       var harga = strPaket[1];
+       var berat = $( "#berat" ).val();
+       var total_harga = harga * berat;
+      $("#total_harga").val(total_harga);
+      //  alert(berat);
+     });
+
+     $('#paket').change(function () {
+       var vPaket = $( "#paket" ).val();
+       var strPaket = vPaket.split(";");
+       var paket = strPaket[0];
+       var harga = strPaket[1];
+       var berat = $( "#berat" ).val();
+      var total_harga = harga * berat;
+      $("#total_harga").val(total_harga);
+      //  alert('dsad');
+     });
+
+ });
+
+</script>
 <!-- /#page-wrapper -->
 <?php include "../template/footer.php"; ?>
