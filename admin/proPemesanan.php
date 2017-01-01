@@ -16,7 +16,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
    $total_harga= $_REQUEST['total_harga'];
 
    $sql = "insert into pemesanan (id_pelgn,id_paket,status_bayar,berat,total_harga) values('$nama_pelgn','$paket','$status_bayar','$berat','$total_harga')";
-
+// print_r($sql);exit();
    $que = $conn->prepare($sql);
    if(($que->execute()))
       {

@@ -58,14 +58,16 @@ $stmt1 = getData($sql1,$conn);
                     </div>
                     <div class="form-group">
                         <label>Paket</label>
-                        <?php $harga ?>
+                        <?php $harga = array();?>
 
-                        <select class="form-control" name="paket">
+                        <select class="form-control" name="paket" id="paket" onchange="choice1();">
+                          <!-- <option value="">Pilih Harga Paket</option> -->
                         <?php foreach($stmt1 as $key){ ?>
-                          <option value="<?= $key->id_paket ?>"> <?php echo $key->paket .'        -->       ' .$key->harga ;?> </option>
+                          <option value="<?= $key->id_paket .';'. $key->harga ?>"> <?php echo $key->paket .'        -->       ' .$key->harga ;?> </option>
 
 
-                          <?php return $key->harga ;} ?>
+                          <?php $harga[$key->id_paket] = $key->harga; } ?>
+
                       </select>
                       <!-- mau ambil data harga di luar foreach , gimana ya ? -->
 
@@ -73,7 +75,7 @@ $stmt1 = getData($sql1,$conn);
                     </div>
 
                     <div class="form-group">
-                      <?php echo
+
                         <label>Bayar di Muka ? </label><br>
                         <label class="radio-inline">
                           <input type="radio" name="status_bayar" id="inlineRadio1" value="1"> Iya
@@ -85,13 +87,13 @@ $stmt1 = getData($sql1,$conn);
 
                     <div class="form-group">
                         <label>Berat</label>
-                        <span><input class="form-control" name="berat" placeholder="Berat Cucian"></span>
+                        <span><input class="form-control" name="berat" placeholder="Berat Cucian" id="berat"></span>
                     </div>
 
 
                     <div class="form-group">
                         <label>Total Harga</label>
-                        <span><input class="form-control" name="total_harga"></span>
+                        <span><input class="form-control" name="total_harga" id="total_harga" value=""></span>
                     </div>
 
       </br>
@@ -111,5 +113,42 @@ $stmt1 = getData($sql1,$conn);
     <!-- /.container-fluid -->
 
 </div>
+<script src="../js/jquery.js"></script>
+<script>
+
+$(document).ready(function(){
+
+  var vPaket = $( "#paket" ).val();
+  var strPaket = vPaket.split(";");
+  var paket = strPaket[0];
+  var harga = strPaket[1];
+  var berat = $( "#berat" ).val();
+  var total_harga = harga * berat;
+
+     $('#berat').keyup(function () {
+       var vPaket = $( "#paket" ).val();
+       var strPaket = vPaket.split(";");
+       var paket = strPaket[0];
+       var harga = strPaket[1];
+       var berat = $( "#berat" ).val();
+       var total_harga = harga * berat;
+      $("#total_harga").val(total_harga);
+      //  alert(berat);
+     });
+
+     $('#paket').change(function () {
+       var vPaket = $( "#paket" ).val();
+       var strPaket = vPaket.split(";");
+       var paket = strPaket[0];
+       var harga = strPaket[1];
+       var berat = $( "#berat" ).val();
+      var total_harga = harga * berat;
+      $("#total_harga").val(total_harga);
+      //  alert('dsad');
+     });
+
+ });
+
+</script>
 <!-- /#page-wrapper -->
 <?php include "../template/footer.php"; ?>
