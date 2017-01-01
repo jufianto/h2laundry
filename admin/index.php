@@ -13,7 +13,7 @@ $sql = "select * from pelanggan";
 $stmt = getData($sql,$conn);
 $pelanggan = count($stmt);
 
-$sqlor = "select * from pemesanan where status = 0";
+$sqlor = "select * from pemesanan";
 $stmt1 = getData($sqlor,$conn);
 $order = count($stmt1);
 
