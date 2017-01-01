@@ -215,7 +215,7 @@ $cucibarang = count($stmt5);
               </div>
                 <!-- end row -->
 
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-lg-12">
                         <div class="panel panel-default">
                             <div class="panel-heading">
@@ -226,7 +226,7 @@ $cucibarang = count($stmt5);
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- /.row -->
 
                 <!-- <div class="row">

@@ -21,7 +21,7 @@ login ok
 
 halaman utama web
 blokir tidak bisa pesan ok
-total harga otomatis
+total harga otomatis ok
 info login gagal ok
 cari di setiap modul ok
 logo di login admin dan index beda
