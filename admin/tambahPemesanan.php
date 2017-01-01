@@ -64,11 +64,16 @@ $stmt1 = getData($sql1,$conn);
                         <?php foreach($stmt1 as $key){ ?>
                           <option value="<?= $key->id_paket ?>"> <?php echo $key->paket .'        -->       ' .$key->harga ;?> </option>
 
-                          <?php } ?>
+
+                          <?php return $key->harga ;} ?>
                       </select>
+                      <!-- mau ambil data harga di luar foreach , gimana ya ? -->
+
+
                     </div>
 
                     <div class="form-group">
+                      <?php echo
                         <label>Bayar di Muka ? </label><br>
                         <label class="radio-inline">
                           <input type="radio" name="status_bayar" id="inlineRadio1" value="1"> Iya
