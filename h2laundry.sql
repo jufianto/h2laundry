@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 25, 2016 at 09:42 AM
+-- Generation Time: Oct 02, 2017 at 08:37 AM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 7.0.9
 
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `h2laundry`
 --
-CREATE DATABASE IF NOT EXISTS `h2laundry` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `h2laundry`;
 
 -- --------------------------------------------------------
 
@@ -53,15 +51,18 @@ CREATE TABLE `barang` (
   `nama_barang` varchar(30) NOT NULL,
   `merk_barang` varchar(30) NOT NULL,
   `stok` int(10) NOT NULL,
-  `total_harga` int(20) NOT NULL
+  `total_harga` int(20) NOT NULL,
+  `tgl_input` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `barang`
 --
 
-INSERT INTO `barang` (`id_barang`, `nama_barang`, `merk_barang`, `stok`, `total_harga`) VALUES
-(1, 'soffel', 'Autan', 10, 30000);
+INSERT INTO `barang` (`id_barang`, `nama_barang`, `merk_barang`, `stok`, `total_harga`, `tgl_input`) VALUES
+(1, 'soffel', 'Autan', 10, 300002, '2017-01-01 19:22:23'),
+(3, 'byclean', 'aqua', 10, 90000, '2017-01-01 19:22:23'),
+(4, 'setrika', 'tamiya', 3, 1000000, '2017-01-04 14:02:26');
 
 -- --------------------------------------------------------
 
@@ -80,7 +81,8 @@ CREATE TABLE `paket` (
 --
 
 INSERT INTO `paket` (`id_paket`, `paket`, `harga`) VALUES
-(1, 'express', 7000);
+(1, 'express', 7000),
+(3, 'murah meriah', 5000);
 
 -- --------------------------------------------------------
 
@@ -103,7 +105,42 @@ CREATE TABLE `pelanggan` (
 --
 
 INSERT INTO `pelanggan` (`id_pelgn`, `username`, `pass_pelgn`, `nama_pelgn`, `no_hp_pelgn`, `almt_pelgn`, `status`) VALUES
-(1, 'ayu', '29c65f781a1068a41f735e1b092546de', 'ayu', '085365861261', 'jalan tanjung batu no 130', 0);
+(7, 'ads', '2deb000b57bfac9d72c14d4ed967b572', 'asd', '544', 'asda', 1),
+(8, 'asd', 'd9729feb74992cc3482b350163a1a010', 'ads', '56', 'ads', 1),
+(9, 'sfds', '7b064dad507c266a161ffc73c53dcdc5', 'ada', 'fa', 'afs', 1),
+(10, 'ossas', '0502cf93993504b19c5a31eb36e61f48', 'Uvuvuwevuwe onyetvwevewve ugwemubwem ossas', '085208210813', 'jalan raya', 1),
+(11, 'ad', '0502cf93993504b19c5a31eb36e61f48', 'orea', '08122121221', 'asa', 1),
+(12, 'ossasu', '0502cf93993504b19c5a31eb36e61f48', 'ossasu', '085208120813', 'jalan raya', 1),
+(15, 'sahabatossas', '0502cf93993504b19c5a31eb36e61f48', 'ossasas', '085208210813', 'jalan raya', 0),
+(16, 'sahabatossass', '0502cf93993504b19c5a31eb36e61f48', 'ossasass', '085208210813', 'jalan raya', 1),
+(17, 'ran', '21232f297a57a5a743894a0e4a801fc3', 'Arneni ', '08236422341', 'Jl aripin ', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pemesanan`
+--
+
+CREATE TABLE `pemesanan` (
+  `id_pemesanan` int(11) NOT NULL,
+  `id_pelgn` int(11) NOT NULL,
+  `id_paket` int(11) NOT NULL,
+  `status_cucian` int(11) NOT NULL DEFAULT '0',
+  `status_bayar` int(11) DEFAULT '0',
+  `tgl_pemesanan` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `berat` int(11) NOT NULL,
+  `total_harga` int(11) NOT NULL,
+  `status` int(11) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `pemesanan`
+--
+
+INSERT INTO `pemesanan` (`id_pemesanan`, `id_pelgn`, `id_paket`, `status_cucian`, `status_bayar`, `tgl_pemesanan`, `berat`, `total_harga`, `status`) VALUES
+(22, 10, 3, 1, 1, '2017-01-04 15:01:02', 90, 450000, 1),
+(23, 10, 1, 1, 1, '2017-01-04 15:03:56', 5, 35000, 1),
+(25, 10, 1, 1, 1, '2017-01-05 07:55:27', 12, 90000, 1);
 
 --
 -- Indexes for dumped tables
@@ -135,6 +172,12 @@ ALTER TABLE `pelanggan`
   ADD PRIMARY KEY (`id_pelgn`);
 
 --
+-- Indexes for table `pemesanan`
+--
+ALTER TABLE `pemesanan`
+  ADD PRIMARY KEY (`id_pemesanan`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -147,17 +190,22 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `barang`
 --
 ALTER TABLE `barang`
-  MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `paket`
 --
 ALTER TABLE `paket`
-  MODIFY `id_paket` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_paket` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `pelanggan`
 --
 ALTER TABLE `pelanggan`
-  MODIFY `id_pelgn` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_pelgn` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+--
+-- AUTO_INCREMENT for table `pemesanan`
+--
+ALTER TABLE `pemesanan`
+  MODIFY `id_pemesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
