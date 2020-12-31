@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>H2 Laundry</title>
+    <title>Exe Laundry</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -58,7 +58,7 @@
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">H2 Laundry</a>
+                <a class="navbar-brand page-scroll" href="#page-top">Exe Laundry</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -86,7 +86,7 @@
             <div class="header-content-inner">
                 <h1 id="homeHeading">Laundry Made Easy</h1>
                 <hr>
-                <p><b  class="text-default" >Jasa H2 laundry sudah melayani ratusan pelanggan dari seluruh Pekanbaru. Bergabunglah dan nikmatilah pengalaman eksklusif bersama H2 Laundry.<b ></p>
+                <p><b  class="text-default" >Jasa Exe laundry sudah melayani ratusan pelanggan dari seluruh Pekanbaru. Bergabunglah dan nikmatilah pengalaman eksklusif bersama Exe Laundry.<b ></p>
                 <a href="register.php" class="btn btn-primary btn-xl page-scroll sr-button">Daftar Sekarang</a>
             </div>
         </div>
@@ -111,7 +111,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">How H2 Works</h2>
+                    <h2 class="section-heading">How Exe Works</h2>
                     <hr class="primary">
                 </div>
             </div>
@@ -260,7 +260,7 @@
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading">Gratis Antar Jemput</h2>
                     <hr class="primary">
-                    <p>H2 Laundry melayani GRATIS antar jemput! Sekarang semuanya menjadi serba praktis. Anda tidak perlu repot-repot mencuci, mengeringkan, dan menyetrika pakaian Anda sendiri. Anda juga tidak perlu keluar rumah untuk menggotong-gotong pakaian Anda. Anda cukup menghubungi kami, maka kami langsung datang ke rumah Anda untuk menjemput pakaian Anda.</p>
+                    <p>Exe Laundry melayani GRATIS antar jemput! Sekarang semuanya menjadi serba praktis. Anda tidak perlu repot-repot mencuci, mengeringkan, dan menyetrika pakaian Anda sendiri. Anda juga tidak perlu keluar rumah untuk menggotong-gotong pakaian Anda. Anda cukup menghubungi kami, maka kami langsung datang ke rumah Anda untuk menjemput pakaian Anda.</p>
 
 				</div>
 
@@ -270,7 +270,7 @@
                 </div>
                 <div class="col-lg-4 text-center">
                     <i class="fa fa-envelope-o fa-3x sr-contact"></i>
-                    <p><a href="mailto:your-email@your-domain.com">h2laundry@gmail.com</a></p>
+                    <p><a href="mailto:your-email@your-domain.com">exelaundry@gmail.com</a></p>
                 </div>
             </div>
         </div>
@@ -280,16 +280,16 @@
             <div class="row">
                 <div class="col-lg-5 col-sm-6 text-center">
                     <img src="img/ft-logo.jpg" height="150" width="400">
-					<p>H2_laundry © 2016</p>
+					<p>exe_laundry © 2016</p>
 					
                 </div>
 				<div class="col-lg-4 col-sm-6 ">
 					<p><b>LOCATION</b></p>
-					<b>Jl.Delima No.123</b>
+					<b>Jl.Localhost No.1337</b>
 					<b>Pekanbaru,RIAU</b>
-					<p>+0852-5555-7777</p>
+					<p>+0852-xxxx-xxxx</p>
 					<p><b>EMAIL</b></p>
-					<p>H2_laundry@gmail.com</p>
+					<p>exe_laundry@gmail.com</p>
 					<p><b>We're on social networks</b></p>
 					<ul class="company-social">
                             <li class="social-facebook"><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
@@ -301,10 +301,7 @@
 				<div class="col-lg-3 col-sm-6 ">
                     <h2 class="section-heading"> </h2>
 					<p><b>Di Rancang Oleh:</b></p>
-					<p>BAYU EKA PAMBUDI</p>
-					<p>JUFIANTO HENRI</p>
-					<p>M ROFI SAPUTRA</p>
-					<p>RISKA ARNENI</p>
+                    <p>Jufianto Henri</p>
                 </div>
             </div>
         </div>
