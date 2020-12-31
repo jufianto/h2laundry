@@ -25,7 +25,7 @@ if(isset($_POST['login'])){
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-    <title>H2 Laundry</title>
+    <title>Exe Laundry</title>
     <meta name="generator" content="Bootply" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -61,7 +61,7 @@ min-height: 700px;
 
 
 				<center><h2>Login Admin</h2></center>
-          <div class="logo " align="center"><img src="../img/logoxx.jpg" width="150" height="150"></div>
+          <!-- <div class="logo " align="center"><img src="../img/logoxx.jpg" width="150" height="150"></div> -->
       </div>
       <div class="modal-body">
           <form class="form col-md-12 center-block" action="<?php $_SERVER['PHP_SELF'] ?>" method="post">

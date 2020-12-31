@@ -13,7 +13,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.html">H2 Laundry</a>
+        <a class="navbar-brand" href="index.html">Exe Laundry</a>
     </div>
     <!-- Top Menu Items -->
     <ul class="nav navbar-right top-nav collapse navbar-collapse navbar-ex1-collapse">

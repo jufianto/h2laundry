@@ -14,7 +14,14 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
    $berat =  $_REQUEST['berat'];
    $total_harga= $_REQUEST['total_harga'];
 
+   $paket = explode(';', $paket);
+   $paket = $paket[0];
+
    $sql = "insert into pemesanan (id_pelgn,id_paket,berat,total_harga) values('$nama_pelgn','$paket','$berat','$total_harga')";
+
+//    print_r($paket);
+//     print_r($_POST);
+//     exit();
 
    $que = $conn->prepare($sql);
    if(($que->execute()))

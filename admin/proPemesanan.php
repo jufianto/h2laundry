@@ -3,7 +3,6 @@
 require_once "funcadmin.php";
 ceklogin();
 require_once '../config.php';
-
 //jika server mendapatkan request post
 if($_SERVER['REQUEST_METHOD'] === 'POST')
 {
@@ -14,9 +13,15 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
    $status_bayar =  $_REQUEST['status_bayar'];
    $berat =  $_REQUEST['berat'];
    $total_harga= $_REQUEST['total_harga'];
+   
+   $paket = explode(';', $paket);
+   $paket = $paket[1];
+
 
    $sql = "insert into pemesanan (id_pelgn,id_paket,status_bayar,berat,total_harga) values('$nama_pelgn','$paket','$status_bayar','$berat','$total_harga')";
-// print_r($sql);exit();
+
+
+
    $que = $conn->prepare($sql);
    if(($que->execute()))
       {

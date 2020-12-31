@@ -60,7 +60,7 @@ $stmt1 = getData($sql1,$conn);
 
                         <select class="form-control" name="paket" id="paket">
                         <?php foreach($stmt1 as $key){ ?>
-                          <option value="<?= $key->id_paket .';'. $key->harga ?>"> <?php echo $key->paket .'        -->       ' .$key->harga ;?> </option>
+                          <option value="<?= $key->id_paket .';'. $key->harga ?>"> <?php echo $key->paket .'(' .$key->harga . ')' ;?> </option>
 
                           <?php } ?>
                       </select>

@@ -134,7 +134,14 @@ $cuciyes = count($stmt4);
                 </select>
                 <select class="col-md-4" name="tahun">
                   <?php
-                  $tahun1 = ['Pilih tahun','2016','2017','2018'];
+
+                  $yearNow = date('Y');
+                  $tahun1 = ['Pilih tahun'];
+                  for($x=3; $x > 0; $x--){
+                    array_push($tahun1, $yearNow - $x, $yearNow + $x);
+                  }
+                  array_push($tahun1, $yearNow);
+                  sort($tahun1);
                   foreach ($tahun1 as $key) {
                     # code...
                     ?> <option value="<?= $key ?>" <?= $tahun == $key ? 'selected' : '' ?> > <?= $key ?> </option> <?php

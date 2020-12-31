@@ -15,7 +15,6 @@ if(isset($_POST['login'])){
   $_SESSION['id_pelgn'] = $obj->id_pelgn;
   header('Location:pelanggan/index.php');
 } else {
-
   header('Location:login.php?failed');
 }
 }
@@ -71,7 +70,7 @@ if(isset($_POST['login'])){
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="index.php">H2 Laundry</a>
+                <a class="navbar-brand page-scroll" href="index.php">Exe Laundry</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -93,7 +92,7 @@ if(isset($_POST['login'])){
     <header>
         <div class="header-content">
             <div class="header-content-inner ">
-                <img src="img/logo-tp.png" width="500px" height="150px">
+                <!-- <img src="img/logo-tp.png" width="500px" height="150px"> -->
 				<div class="row">
 				<div class="col-lg-4 col-sm-6">
 				</div>
